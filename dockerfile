@@ -11,10 +11,10 @@ COPY ./requirements.txt /aiship_webapp/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /aiship_webapp/requirements.txt
 
 # copy files and directory to the working directory
-COPY ./app /iship_webapp/src/app/
-COPY ./model /iship_webapp/src/model/
-COPY ./static /iship_webapp/src/static/
-COPY ./templates /iship_webapp/src/templates/
+COPY ./app /aiship_webapp/src/app/
+COPY ./model /aiship_webapp/src/model/
+COPY ./static /aiship_webapp/src/static/
+COPY ./templates /aiship_webapp/src/templates/
 
 # run uvicorn server
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
