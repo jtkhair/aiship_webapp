@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', path='/styles/style.css')}}">    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/styles/style.css')}}">
+    <title>Document</title>
 </head>
 
 <body>
@@ -30,10 +31,8 @@
                                 AI-based ship design application
                             </small>
                         </p>
-
                     </div>
                 </div>
-
 
             </div>
             <div class="col-5 d-flex justify-content-end">
@@ -79,54 +78,182 @@
         </div>
         <!-- end page title -->
         <div class="row" style="height:100vh">
-            <div class="col-6 px-5 py-5 border">
+            <div class="col-6 border">
                 <div class="row">
-                    <form>
+                    <form action="/predict/" enctype="application/x-www-form-urlencoded" method="post">
+
                         <!-- range slider 1 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">LWL</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="lwlRange" class="form-label">LWL</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="lwlRange"
+                                            name="LWL" value="0" onchange="updateTextInput(this.value,textInputLWL);">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInputLWL" value="0"
+                                            onchange="updateRangeInput(this.value,lwlRange);">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- range slider 2 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">B</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="bRange" class="form-label">B</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="bRange"
+                                            name="B" value="0" onchange="updateTextInput(this.value,textInputB)">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInputB" value="0"
+                                            onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <!-- range slider 3 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">T</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="tRange" class="form-label">T</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="tRange"
+                                            name="T">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
+                                            onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 4 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">L/B</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="lbRange" class="form-label">L/B</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="lbRange"
+                                            name="LB">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
+                                            onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 5 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">B/T</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="btRange" class="form-label">B/T</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="btRange"
+                                            name="BT">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
+                                            onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 6 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">Disp</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="dispRange" class="form-label">Disp</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="dispRange"
+                                            name="Disp">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
+                                            onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 7 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">CB</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="cbRange" class="form-label">CB</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="cbRange" name="CB">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 8 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">VS</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="vsRange" class="form-label">VS</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="vsRange" name="VS">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- range slider 9 -->
                         <div class="col-12">
-                            <label for="customRange3" class="form-label">Fn</label>
-                            <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="fnRange" class="form-label">Fn</label>
+                                    </div>
+                                    <div class="col-9">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="fnRange" name="FN">
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="col-12 d-flex justify-content-center">
-                            <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                            <button class="btn btn-primary btn-sm" type="submit">submit</button>
                         </div>
-                        <input type="range" id="textInput2" name="rangeInput" min="0" max="100"
+
+                        <!-- <input type="range" id="textInput2" name="rangeInput" min="0" max="100"
                             onchange="updateTextInput(this.value);">
-                        <input type="text" id="textInput" value="" onchange="updateTextInput2(this.value)">
+                        <input type="text" id="textInput" value="" onchange="updateTextInput2(this.value)"> -->
                     </form>
                 </div>
             </div>
@@ -142,11 +269,12 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script>
-        function updateTextInput(val) {
-            document.getElementById('textInput').value = val;
+        function updateTextInput(val,itemId) {
+            itemId.value = val;
         }
-        function updateTextInput2(val) {
-            textInput2.value = val;
+
+        function updateRangeInput(val,itemId) {
+            itemId.value = val;
         }
     </script>
 </body>

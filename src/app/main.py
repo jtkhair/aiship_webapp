@@ -9,7 +9,7 @@ Deployment is based on pretrained model developed using scikit learn
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 from fastapi.responses import HTMLResponse
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from io import StringIO
 import logging
@@ -49,3 +49,8 @@ logging.basicConfig(level=logging.DEBUG, filename="logs.log")
 async def main(request: Request):
     return templates.TemplateResponse("base.html", {"request": request})
 
+@app.post("/predict/")
+async def login(LWL: str = Form(...)):
+    print(LWL)
+    return {"username": LWL}
+# 
