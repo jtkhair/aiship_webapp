@@ -47,10 +47,39 @@ logging.basicConfig(level=logging.DEBUG, filename="logs.log")
 # home page
 @app.get("/", response_class=HTMLResponse)
 async def main(request: Request):
-    return templates.TemplateResponse("base.html", {"request": request})
+    sliders = [
+        "LWL",
+        "B",
+        "T",
+        "L/B",
+        "B/T",
+        "Disp",
+        "CB",
+        "VS",
+        "Fn"
+    ]
+
+    return templates.TemplateResponse("base.html", {"request": request, "sliders": sliders})
 
 @app.post("/predict/")
-async def login(LWL: str = Form(...)):
+async def login(
+    LWL: float = Form(...),
+    B: str = Form(...),
+    T: str = Form(...),
+    LB: str = Form(...),
+    BT: str = Form(...),
+    Disp: str = Form(...),
+    CB: str = Form(...),
+    VS: str = Form(...),
+    Fn: str = Form(...)):
     print(LWL)
-    return {"username": LWL}
+    return {
+        "LWL": LWL,
+        "B": B,
+        "T": T,
+        "LB": LB,
+        "BT": BT,
+        "Disp": Disp,
+        "CB": CB
+    }
 # 

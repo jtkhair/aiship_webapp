@@ -80,180 +80,38 @@
         <div class="row" style="height:100vh">
             <div class="col-6 border">
                 <div class="row">
-                    <form action="/predict/" enctype="application/x-www-form-urlencoded" method="post">
+                    <form action="/predict/" enctype="application/x-www-form-urlencoded" method="post" >
 
-                        <!-- range slider 1 -->
+                        <!-- generate range slider -->
+                        {% for slider in sliders %}
+                        {% set sliderId = slider.lower().replace("/","") ~ "Range" %}
+                        {% set sliderName = slider.replace("/","") %}
+                        {% set textInputId = "textInput" ~ sliderName %}
+                        {% set updateText = "updateTextInput(this.value," ~ textInputId ~ ");" %}
+                        {% set updateRange = "updateRangeInput(this.value," ~ sliderId ~ ");" %}
                         <div class="col-12">
                             <div class="container-fluid">
                                 <div class="row">
                                     <div class="col-12">
-                                        <label for="lwlRange" class="form-label">LWL</label>
+                                        <label for="{{sliderId}}" class="form-label">{{slider}}</label>
                                     </div>
                                     <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="lwlRange"
-                                            name="LWL" value="0" onchange="updateTextInput(this.value,textInputLWL);">
+                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="{{sliderId}}"
+                                            name="{{sliderName}}" value="0" onchange="{{updateText}}">
                                     </div>
                                     <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInputLWL" value="0"
-                                            onchange="updateRangeInput(this.value,lwlRange);">
+                                        <input type="text" class="form-control form-control-sm" id="{{textInputId}}"
+                                            value="0" onchange="{{updateRange}}">
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- range slider 2 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="bRange" class="form-label">B</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="bRange"
-                                            name="B" value="0" onchange="updateTextInput(this.value,textInputB)">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInputB" value="0"
-                                            onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 3 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="tRange" class="form-label">T</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="tRange"
-                                            name="T">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
-                                            onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 4 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="lbRange" class="form-label">L/B</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="lbRange"
-                                            name="LB">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
-                                            onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 5 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="btRange" class="form-label">B/T</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="btRange"
-                                            name="BT">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
-                                            onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 6 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="dispRange" class="form-label">Disp</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="dispRange"
-                                            name="Disp">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0"
-                                            onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 7 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="cbRange" class="form-label">CB</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="cbRange" name="CB">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 8 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="vsRange" class="form-label">VS</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="vsRange" name="VS">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- range slider 9 -->
-                        <div class="col-12">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-12">
-                                        <label for="fnRange" class="form-label">Fn</label>
-                                    </div>
-                                    <div class="col-9">
-                                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="fnRange" name="FN">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control form-control-sm" id="textInput" value="0" onchange="updateTextInput2(this.value)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
+                        <!-- end of slider -->
 
                         <div class="col-12 d-flex justify-content-center">
-                            <button class="btn btn-primary btn-sm" type="submit">submit</button>
+                            <button class="btn btn-primary btn-sm" type="submit" id="formSubmit">submit</button>
                         </div>
-
-                        <!-- <input type="range" id="textInput2" name="rangeInput" min="0" max="100"
-                            onchange="updateTextInput(this.value);">
-                        <input type="text" id="textInput" value="" onchange="updateTextInput2(this.value)"> -->
                     </form>
                 </div>
             </div>
@@ -269,13 +127,18 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script>
-        function updateTextInput(val,itemId) {
+        function updateTextInput(val, itemId) {
             itemId.value = val;
         }
 
-        function updateRangeInput(val,itemId) {
+        function updateRangeInput(val, itemId) {
             itemId.value = val;
         }
+        /**
+        formSubmit.addEventListener("click", (event) => {
+            event.preventDefault();
+            console.log(event);
+        })*/
     </script>
 </body>
 
