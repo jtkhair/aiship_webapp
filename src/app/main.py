@@ -43,7 +43,6 @@ logging.basicConfig(level=logging.DEBUG, filename="logs.log")
 # model = pickle.load(open("../model/mlp_pwr_best_model.sav", 'rb'))
 # scaler = pickle.load(open("../model/scaler_pwr.sav", 'rb'))
 
-
 # home page
 @app.get("/", response_class=HTMLResponse)
 async def main(request: Request):
@@ -59,27 +58,37 @@ async def main(request: Request):
         "Fn"
     ]
 
-    return templates.TemplateResponse("base.html", {"request": request, "sliders": sliders})
+    return templates.TemplateResponse("home.html", 
+        {
+            "request": request,
+            "sliders": sliders
+        })
 
-@app.post("/predict/")
-async def login(
+@app.post("/predict/", response_class=HTMLResponse)
+async def predict(
+    request: Request,
     LWL: float = Form(...),
-    B: str = Form(...),
-    T: str = Form(...),
-    LB: str = Form(...),
-    BT: str = Form(...),
-    Disp: str = Form(...),
-    CB: str = Form(...),
-    VS: str = Form(...),
-    Fn: str = Form(...)):
-    print(LWL)
-    return {
-        "LWL": LWL,
-        "B": B,
-        "T": T,
-        "LB": LB,
-        "BT": BT,
-        "Disp": Disp,
-        "CB": CB
-    }
-# 
+    B: float = Form(...),
+    T: float = Form(...),
+    LB: float = Form(...),
+    BT: float = Form(...),
+    Disp: float = Form(...),
+    CB: float = Form(...),
+    VS: float = Form(...),
+    Fn: float = Form(...)):
+    sliders = [
+        {"name":"LWL","val":LWL},
+        {"name":"B","val": B},
+        {"name":"T","val": T},
+        {"name":"L/B","val": LB},
+        {"name":"B/T","val":BT},
+        {"name":"Disp","val":Disp},
+        {"name":"CB","val":CB},
+        {"name":"VS","val":VS},
+        {"name":"Fn","val":Fn}
+    ]
+    return templates.TemplateResponse("prediction.html", 
+        {
+            "request": request,
+            "sliders": sliders
+        })

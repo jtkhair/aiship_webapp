@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}
+Ship Powering Prediction
+{% endblock %}
+
+{% block page_title%}
+Ship Power Prediction
+{% endblock %}
+
+{% block range %}
+{% for slider in sliders %}
+{% set sliderId = slider.name.lower().replace("/","") ~ "Range" %}
+{% set sliderName = slider.name.replace("/","") %}
+{% set textInputId = "textInput" ~ sliderName %}
+{% set updateText = "updateTextInput(this.value," ~ textInputId ~ ");" %}
+{% set updateRange = "updateRangeInput(this.value," ~ sliderId ~ ");" %}
+<div class="col-12">
+    <div class="row">
+        <div class="col-12">
+            <label for="{{sliderId}}" class="form-label">{{slider.name}}</label>
+        </div>
+        <div class="col-9">
+            <input type="range" class="form-range" min="0" max="5" step="0.5" id="{{sliderId}}" name="{{sliderName}}"
+                value="{{slider.val}}" onchange="{{updateText}}">
+        </div>
+        <div class="col-3">
+            <input type="number" class="form-control form-control-sm" min="0" max="5" step="0.5" id="{{textInputId}}"
+                value="{{slider.val}}" onchange="{{updateRange}}">
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block table %}
+<table class="table">
+    <tr>
+        {% for slider in sliders %}
+        <th>{{slider.name}}</th>
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for slider in sliders %}
+        <td>{{slider.val}}</td>
+        {% endfor %}
+    </tr>
+</table>
+{% endblock %}
+
+{% block graph %}
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+          label: 'My First dataset',
+          backgroundColor: 'rgb(255, 99, 132)',
+          borderColor: 'rgb(255, 99, 132)',
+          data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+      };
+
+    const config = {
+        type: 'line',
+        data: data,
+        options: {}
+      };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+      );
+
+</script>
+{% endblock %}
