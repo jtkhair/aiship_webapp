@@ -3,7 +3,7 @@ asgiref==3.4.1
 click==8.0.3
 contextlib2==21.6.0
 contextvars==2.4
-dataclasses==0.8
+dataclasses==0.6
 fastapi==0.70.0
 h11==0.12.0
 httptools==0.2.0
@@ -14,7 +14,9 @@ Jinja2==3.0.3
 MarkupSafe==2.0.1
 pydantic==1.8.2
 python-dotenv==0.19.2
+python-multipart==0.0.5
 PyYAML==6.0
+six==1.16.0
 sniffio==1.2.0
 starlette==0.16.0
 typing-extensions==3.10.0.2
