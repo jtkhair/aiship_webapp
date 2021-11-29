@@ -74,8 +74,9 @@ async def predict(
     BT: float = Form(...),
     Disp: float = Form(...),
     CB: float = Form(...),
-    VS: float = Form(...),
-    Fn: float = Form(...)):
+    VSmin: float = Form(...),
+    VSmax: float = Form(...)):
+    # Fn: float = Form(...)):
     sliders = [
         {"name":"LWL","val":LWL},
         {"name":"B","val": B},
@@ -83,9 +84,9 @@ async def predict(
         {"name":"L/B","val": LB},
         {"name":"B/T","val":BT},
         {"name":"Disp","val":Disp},
-        {"name":"CB","val":CB},
-        {"name":"VS","val":VS},
-        {"name":"Fn","val":Fn}
+        {"name":"CB","val":CB}
+        # {"name":"VS","val":VS},
+        # {"name":"Fn","val":Fn}
     ]
     return templates.TemplateResponse("prediction.html", 
         {
