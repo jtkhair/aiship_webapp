@@ -1231,3 +1231,7 @@ DEBUG:multipart.multipart:Calling on_part_data with data[831:1151]
 DEBUG:multipart.multipart:Calling on_part_data with data[0:2]
 DEBUG:multipart.multipart:Calling on_part_end with no data
 DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [5659]
