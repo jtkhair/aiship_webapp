@@ -179,3 +179,6 @@ DEBUG:multipart.multipart:Calling on_field_name with data[41:43]
 DEBUG:multipart.multipart:Calling on_field_data with data[44:45]
 DEBUG:multipart.multipart:Calling on_field_end with no data
 DEBUG:multipart.multipart:Calling on_end with no data
+INFO:uvicorn.error:Started server process [8332]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.

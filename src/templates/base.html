@@ -15,10 +15,10 @@
     <div class="container-fluid">
         <!-- row for header -->
         <div class="row py-2 px-2 border">
-            <div class="col-3 padding-right">
+            <div class="col-2 padding-right">
                 <img src="{{ url_for('static', path='/images/v2_3.png')}}" alt="logo" class="header-image img-fluid">
             </div>
-            <div class="col-3 padding-left">
+            <div class="col-6 padding-left">
                 <div class="row">
                     <div class="col-12">
                         <h5 class = "margin-bottom">
@@ -26,14 +26,20 @@
                         </h5>
                     </div>
                     <div class="col-12">
-                            <small class = "margin-bottom">
+                            <p class = "margin-bottom">
                                 AI-based ship design application
-                            </small>
+                            </p>
                     </div>
                 </div>
-
             </div>
-            <div class="col-6 d-flex justify-content-end">
+            <div class="col-2">
+                <div class="row">
+                    <p class = "text-sm-end">
+                        In collaboration with
+                    </p>
+                </div>
+            </div>
+            <div class="col-2 d-flex justify-content-end">
                 <img src="{{ url_for('static', path='/images/v13_15.png')}}" alt="logo" class="header-image img-fluid">
             </div>
         </div>
@@ -74,15 +80,15 @@
         </div>
         <!-- end page title -->
         <div class="row">
-            <div class="col-6 border py-2 px-5">
+            <div class="col-6 border py-4 px-5">
                 <div class="row">
-                    <form action="/predict/" enctype="application/x-www-form-urlencoded" method="post">
-                        {% block range %}{% endblock %}
-                        <div class="col-12 d-flex justify-content-center py-1">
-                            <button class="btn btn-primary btn-sm" type="submit" id="formSubmit">submit</button>
-                        </div>
+                    <form action="/uploadfile/" enctype="multipart/form-data" method="post">
+                        <div class="input-group mb-3">
+                            <input type="file" class="form-control" name="file">
+                            <input class="input-group-text" type="submit">
+                          </div>        
                     </form>
-                    <div class="row py-6 height-edit">
+                    <div class="row py-10 height-edit">
                     </div>
                 </div>
                 <div class="row">
