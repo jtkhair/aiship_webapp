@@ -82,17 +82,10 @@
         <div class="row">
             <div class="col-6 border py-4 px-5">
                 <div class="row">
-                    <form action="/uploadfile/" enctype="multipart/form-data" method="post">
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" name="file">
-                            <input class="input-group-text" type="submit">
-                          </div>        
-                    </form>
-                    <div class="row py-10 height-edit">
-                    </div>
+                    {% block inputfile %}{% endblock %}                    
                 </div>
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-12 py-10 height-edit">
                         {% block table %}{% endblock %}
                     </div>
                 </div>
