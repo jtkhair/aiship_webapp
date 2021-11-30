@@ -182,3 +182,228 @@ DEBUG:multipart.multipart:Calling on_end with no data
 INFO:uvicorn.error:Started server process [8332]
 INFO:uvicorn.error:Waiting for application startup.
 INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Started server process [698]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [698]
+INFO:uvicorn.error:Started server process [872]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./src/app/main.py", line 56, in main
+    "graph_data": graph_data,
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 86, in TemplateResponse
+    template = self.get_template(name)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 73, in get_template
+    return self.env.get_template(name)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 997, in get_template
+    return self._load_template(name, globals)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 958, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/loaders.py", line 137, in load
+    code = environment.compile(source, name, filename)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 757, in compile
+    self.handle_exception(source=source_hint)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "src/templates/home.html", line 7, in template
+    {% block gchart}
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [872]
+INFO:uvicorn.error:Started server process [1008]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1008]
+INFO:uvicorn.error:Started server process [1182]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1182]
+INFO:uvicorn.error:Started server process [1321]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./src/app/main.py", line 63, in main
+    "graph_data2": graph_data2,
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 93, in TemplateResponse
+    background=background,
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 33, in __init__
+    content = template.render(context)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "src/templates/home.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "src/templates/base.html", line 12, in top-level template code
+    {% block gchart %}{% endblock %}
+  File "src/templates/home.html", line 15, in block 'gchart'
+    {{graph_data1| tojson}}
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/filters.py", line 1673, in do_tojson
+    return htmlsafe_json_dumps(value, dumps=dumps, **kwargs)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/utils.py", line 736, in htmlsafe_json_dumps
+    dumps(obj, **kwargs)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Undefined' is not JSON serializable
+ERROR:uvicorn.error:Exception in ASGI application
+Traceback (most recent call last):
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/protocols/http/httptools_impl.py", line 375, in run_asgi
+    result = await app(self.scope, self.receive, self.send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/uvicorn/middleware/proxy_headers.py", line 75, in __call__
+    return await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/applications.py", line 208, in __call__
+    await super().__call__(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 181, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/middleware/errors.py", line 159, in __call__
+    await self.app(scope, receive, _send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 82, in __call__
+    raise exc
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/exceptions.py", line 71, in __call__
+    await self.app(scope, receive, sender)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 656, in __call__
+    await route.handle(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 259, in handle
+    await self.app(scope, receive, send)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/routing.py", line 61, in app
+    response = await func(request)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 227, in app
+    dependant=dependant, values=values, is_coroutine=is_coroutine
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/fastapi/routing.py", line 159, in run_endpoint_function
+    return await dependant.call(**values)
+  File "./src/app/main.py", line 63, in main
+    "graph_data2": graph_data2,
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 93, in TemplateResponse
+    background=background,
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/starlette/templating.py", line 33, in __init__
+    content = template.render(context)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 1291, in render
+    self.environment.handle_exception()
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/environment.py", line 925, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "src/templates/home.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "src/templates/base.html", line 12, in top-level template code
+    {% block gchart %}{% endblock %}
+  File "src/templates/home.html", line 15, in block 'gchart'
+    {{graph_data1| tojson}}
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/filters.py", line 1673, in do_tojson
+    return htmlsafe_json_dumps(value, dumps=dumps, **kwargs)
+  File "/mnt/d/User/jkhair/aiship_webapp/aishipwebappenv/lib/python3.6/site-packages/jinja2/utils.py", line 736, in htmlsafe_json_dumps
+    dumps(obj, **kwargs)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "/home/unp1n99u/.pyenv/versions/3.6.15/lib/python3.6/json/encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Undefined' is not JSON serializable
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Finished server process [1321]
+INFO:uvicorn.error:Started server process [1499]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1499]
+INFO:uvicorn.error:Started server process [1625]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1625]
+INFO:uvicorn.error:Started server process [1671]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1671]
+INFO:uvicorn.error:Started server process [1734]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.
+INFO:uvicorn.error:Shutting down
+INFO:uvicorn.error:Waiting for application shutdown.
+INFO:uvicorn.error:Application shutdown complete.
+INFO:uvicorn.error:Finished server process [1734]
+INFO:uvicorn.error:Started server process [1810]
+INFO:uvicorn.error:Waiting for application startup.
+INFO:uvicorn.error:Application startup complete.

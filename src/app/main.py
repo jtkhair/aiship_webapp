@@ -44,22 +44,21 @@ logging.basicConfig(level=logging.DEBUG, filename="logs.log")
 # home page
 @app.get("/", response_class=HTMLResponse)
 async def main(request: Request):
-    sliders = [
-        "LWL",
-        "B",
-        "T",
-        "L/B",
-        "B/T",
-        "Disp",
-        "CB",
-        "VS",
-        "Fn"
-    ]
+    graph_data1 = [['Speed', 'Power'],
+          ['10',  0],
+          ['20',  0],
+          ['30',  0]]
+
+    graph_data2 = [['Fn', 'Power'],
+          ['10',  0],
+          ['20',  0],
+          ['30',  0]]
 
     return templates.TemplateResponse("home.html", 
         {
             "request": request,
-            "sliders": sliders
+            "graph_data1": graph_data1,
+            "graph_data2": graph_data2,
         })
 
 @app.post("/predict/", response_class=HTMLResponse)
