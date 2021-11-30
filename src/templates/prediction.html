@@ -50,7 +50,7 @@ Ship Powering Prediction
             }
         },
         series: {
-            0: { color: '#0000FF' },
+            0: { color: '#FF0000' },
           },
         vAxis: {
             title: 'Power (kW)',
@@ -81,7 +81,26 @@ Ship Power Prediction
 {% endblock %}
 
 {% block table %}
-
+<div style="height:450px;overflow:auto">
+  <table class="table table-striped table-hover">
+      <thead>
+      <tr>
+          {% for item in output_header %}
+          <th scope="col">{{item}}</th>
+          {% endfor %}
+      </tr>
+      </thead>
+      <tbody>
+      {% for table_item in output_table %}
+      <tr>
+          {% for i in table_item %}
+          <td>{{i}}</td>
+          {% endfor %}
+      </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+</div>
 {% endblock %}
 
 {% block graph %}
