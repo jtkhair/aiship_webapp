@@ -13,11 +13,9 @@ from fastapi import FastAPI, Form, File, UploadFile
 from fastapi.staticfiles import StaticFiles
 from io import StringIO
 import logging
-# import pandas as pd
+import pandas as pd
 import pickle
-# from sklearn.preprocessing import MinMaxScaler
 
-# scaler = MinMaxScaler()
 
 # %%
 
