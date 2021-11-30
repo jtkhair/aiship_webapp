@@ -46,13 +46,17 @@ logging.basicConfig(level=logging.DEBUG, filename="logs.log")
 async def main(request: Request):
     graph_data1 = [['Speed', 'Power'],
           ['10',  0],
+          ['15',  0],
           ['20',  0],
+          ['25',  0],
           ['30',  0]]
 
     graph_data2 = [['Fn', 'Power'],
-          ['10',  0],
-          ['20',  0],
-          ['30',  0]]
+          ['0.10',  0],
+          ['0.20',  0],
+          ['0.30',  0],
+          ['0.40',  0],
+          ['0.50',  0]]
 
     return templates.TemplateResponse("home.html", 
         {
