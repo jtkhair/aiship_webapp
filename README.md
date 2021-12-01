@@ -1,10 +1,10 @@
 # Web Application with Data Centric Approach to Ship Powering Prediction using Deep Learning
 
 ## Prerequisite
-Interpreter ver.: python 3.6.15
-Container ver.: 20.10.10
-Application ver.: v1.0
-Dependencies: As per listed in requirements.txt
+- Interpreter ver.: python 3.6.15
+- Container ver.: 20.10.10
+- Application ver.: v1.0
+- Dependencies: As per listed in requirements.txt
 
 ## Introduction
 This web application is developed based on the joint work between the [Marine Technology Centre](http://www.mtc-utm.my/)
@@ -56,6 +56,7 @@ Range | 80 - 240 | 15 - 32 | 3 - 8 | 3.5 - 9.0 | 3.0 - 5.5 | 2500 - 32000 | 0.5 
 ## Input data example
 
 ID | LWL | B | T | L/B | B/T | Disp | CB | Vs | Fn | P |
+--- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |
 INPUT_80_1 | 80 | 12.4 | 4.4 | 6.45 | 2.82 | 1712 | 0.39 | 10 | 0.18 | Nan |
 
 ### Acronym
