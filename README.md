@@ -55,9 +55,9 @@ Range | 80 - 240 | 15 - 32 | 3 - 8 | 3.5 - 9.0 | 3.0 - 5.5 | 2500 - 32000 | 0.5 
 
 ## Input data example
 
-ID | LWL | B | T | L/B | B/T | Disp | CB | Vs | Fn | P |
+ID | LWL | B | T | L/B | B/T | Disp | CB | Vs | Fn | P 
 --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |--- |
-INPUT_80_1 | 80 | 12.4 | 4.4 | 6.45 | 2.82 | 1712 | 0.39 | 10 | 0.18 | Nan |
+INPUT_80_1 | 80 | 12.4 | 4.4 | 6.45 | 2.82 | 1712 | 0.39 | 10 | 0.18 | Nan 
 
 ### Acronym
 - Waterline Length in m, LWL
