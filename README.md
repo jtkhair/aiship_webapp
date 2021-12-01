@@ -2,7 +2,7 @@
 
 ## Prerequisite
 - Interpreter ver.: python 3.6.15
-- Container ver.: 20.10.10
+- Container ver.: Docker 20.10.10
 - Application ver.: v1.0
 - Dependencies: As per listed in requirements.txt
 
