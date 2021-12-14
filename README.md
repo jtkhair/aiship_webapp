@@ -60,16 +60,16 @@ ID | LWL | B | T | L/B | B/T | Disp | CB | Vs | Fn | P
 INPUT_80_1 | 80 | 12.4 | 4.4 | 6.45 | 2.82 | 1712 | 0.39 | 10 | 0.18 | Nan 
 
 ### Acronym
-- Waterline Length in m, LWL
+- Waterline length in m, LWL
 - Breadth at waterline in m, B
 - Draught in m, T
-- Length-to-Breadth ratio, L/B
-- Breadth-to-Draught ratio, B/T
+- Length-to-breadth ratio, L/B
+- Breadth-to-draught ratio, B/T
 - Displacement in t, Disp
-- Block Coefficient, CB
-- Service Speed in kn, Vs
-- Froude Number, Fn
-- Brake KiloWatt Power in kW, P
+- Block coefficient, CB
+- Service speed in kn, Vs
+- Froude number, Fn
+- Brake kiloWatt Power in kW, P
 
 ## Acknowledgement
 > This work is funded by the Universiti Teknologi Malaysia (UTM) under the Research University Grant (RUG).
