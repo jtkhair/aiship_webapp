@@ -69,7 +69,7 @@ INPUT_80_1 | 80 | 12.4 | 4.4 | 6.45 | 2.82 | 1712 | 0.39 | 10 | 0.18 | Nan
 - Block coefficient, CB
 - Service speed in kn, Vs
 - Froude number, Fn
-- Brake kiloWatt Power in kW, P
+- Brake kilowatt power in kW, P
 
 ## Acknowledgement
 > This work is funded by the Universiti Teknologi Malaysia (UTM) under the Research University Grant (RUG).
