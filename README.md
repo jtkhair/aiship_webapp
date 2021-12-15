@@ -45,7 +45,7 @@ docker run -d --name aishipwebapp -p 80:80 aishipwebapp:1.0
 5. Go to the link http://0.0.0.0:80 or http://localhost:80 to use the web app
 
 6. Input dataset *.csv file and click submit to perform the prediction. Note that the *.csv file must follow the set 
-schema: (['ID', 'LWL', 'B', 'T', 'L/B', 'B/T', 'Disp', 'CB', 'Vs'. 'Fn', 'P']) and example data file as in the data directory
+schema: (['ID', 'LWL', 'B', 'T', 'L/B', 'B/T', 'Disp', 'CB', 'Vs'. 'Fn', 'P']) and example data file as in the src/data directory
 
 ## Input data format, range and description
 
