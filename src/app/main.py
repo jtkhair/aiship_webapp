@@ -93,14 +93,14 @@ async def predict(request: Request, file: UploadFile = File(...)):
         df_data_scaled = pd.DataFrame(data_scaled, index=df.index)
         df_data_scaled.columns = ['LWL', 'B', 'T', 'L/B', 'B/T', 'Disp', 'CB', 'Vs', 'Fn', 'P']
 
-        #  Create features
-        X = df_data_scaled.drop(['P'], 1)
+        #  Create label
+        y = df_data_scaled.drop(['P'], 1)
 
         # Infer powering
-        predict_P = model.predict(X)
+        predict_P = model.predict(y)
 
         # merge predicted_P to df
-        df_predict_P = X
+        df_predict_P = y
         df_predict_P['P'] = predict_P.tolist()
 
         # inverse scale
