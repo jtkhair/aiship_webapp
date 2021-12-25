@@ -33,7 +33,7 @@ git pull https://github.com/jtkhair/aiship_webapp
 
 3. Build docker image by running below commands in the terminal (make sure docker is running):
 ```
-cd aishipwebapp
+cd aiship_webapp
 docker build -t aishipwebapp:1.0 .
 ```
 
