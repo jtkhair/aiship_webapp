@@ -1,7 +1,4 @@
 """
-Web server script that exposes endpoints and pushes ship principal parameter data (csv file) to Redis for passenger
-ship powering by model server. Polls Redis for response from model server.
-
 Deployment is based on pretrained model developed using scikit learn
 """
 
