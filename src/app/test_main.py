@@ -28,18 +28,18 @@ df_data_scaled = pd.DataFrame(data_scaled, index=df.index)
 df_data_scaled.columns = ['LWL', 'B', 'T', 'L/B', 'B/T', 'Disp', 'CB', 'Vs', 'Fn', 'P']
 
 #  Create label
-y = df_data_scaled.drop(['P'], 1)
+X = df_data_scaled.drop(['P'], 1)
 
 # Infer powering
-predict_P = model.predict(y)
+predict_P = model.predict(X)
 
 # merge predicted_P to df
-df_predict_P = y
+df_predict_P = X
 df_predict_P['P'] = predict_P.tolist()
 
 # inverse scale
 predicted_P = scaler.inverse_transform(df_predict_P)
-df_predicted_P = pd.DataFrame(predicted_P, index=y.index)
+df_predicted_P = pd.DataFrame(predicted_P, index=X.index)
 df_predicted_P.columns = ['LWL', 'B', 'T', 'L/B', 'B/T', 'Disp', 'CB', 'Vs', 'Fn', 'P']
 
 # merge scaled P to input file
